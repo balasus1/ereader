@@ -1,0 +1,140 @@
+
+/* Base reader styles */
+.reader-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Theme styles */
+.theme-light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #0066cc;
+}
+
+.theme-sepia {
+  --bg-color: #f4ecd8;
+  --text-color: #5b4636;
+  --link-color: #8b4513;
+}
+
+.theme-dark {
+  --bg-color: #2b2b2b;
+  --text-color: #dddddd;
+  --link-color: #81a1c1;
+}
+
+/* Font size presets */
+.font-small {
+  font-size: 0.9rem;
+}
+
+.font-medium {
+  font-size: 1rem;
+}
+
+.font-large {
+  font-size: 1.2rem;
+}
+
+.font-xlarge {
+  font-size: 1.5rem;
+}
+
+/* Reader viewport styles */
+.reader-viewport {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.reader-viewport a {
+  color: var(--link-color);
+}
+
+/* Navigation controls */
+.nav-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+/* Toolbar styles */
+.reader-toolbar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+}
+
+/* Sidebar styles */
+.reader-sidebar {
+  background: var(--bg-color);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* TOC and Bookmark styles */
+.toc-item, .bookmark-item {
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toc-item:hover, .bookmark-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .reader-toolbar {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .nav-controls {
+    padding: 0.5rem;
+  }
+  
+  .reader-sidebar {
+    width: 100%;
+    max-width: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+  }
+}
